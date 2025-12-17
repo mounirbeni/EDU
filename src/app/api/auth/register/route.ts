@@ -91,10 +91,10 @@ export async function POST(req: Request) {
             { status: 201 }
         );
 
-    } catch (error) {
+    } catch (error: any) {
         console.error('Registration error:', error);
         return NextResponse.json(
-            { error: 'Registration failed. Please try again.' },
+            { error: 'Registration failed. Please try again.', details: error.message },
             { status: 500 }
         );
     }
