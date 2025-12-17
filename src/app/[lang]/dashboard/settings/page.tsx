@@ -185,7 +185,7 @@ export default function SettingsPage({ params }: { params: Promise<{ lang: strin
                         </div>
 
                         <div>
-                            <label style={{ display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            <label style={{ marginBottom: '8px', fontSize: '14px', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '6px' }}>
                                 <Globe size={14} />
                                 {dict.settings.language}
                             </label>

@@ -1,6 +1,6 @@
 'use client';
 
-import { use, useEffect, useState } from 'react';
+import { use, useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { ShoppingBag, Eye, CheckCircle, Clock, AlertCircle, X } from 'lucide-react';
 
@@ -19,8 +19,7 @@ interface Order {
     };
 }
 
-export default function AdminOrdersPage({ params }: { params: Promise<{ lang: string }> }) {
-    const { lang } = use(params);
+function AdminOrdersContent({ lang, dict }: { lang: string, dict: any }) {
     const searchParams = useSearchParams();
     const statusFilter = searchParams.get('status');
 
@@ -28,36 +27,6 @@ export default function AdminOrdersPage({ params }: { params: Promise<{ lang: st
     const [loading, setLoading] = useState(true);
     const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
     const [confirming, setConfirming] = useState(false);
-
-    // Dictionary
-    const dict = {
-        orders: {
-            title: lang === 'ar' ? 'إدارة الطلبات' : lang === 'fr' ? 'Gestion des commandes' : 'Order Management',
-            noOrders: lang === 'ar' ? 'لا توجد طلبات' : lang === 'fr' ? 'Aucune commande' : 'No orders',
-            orderId: lang === 'ar' ? 'رقم الطلب' : lang === 'fr' ? 'N° de commande' : 'Order ID',
-            customer: lang === 'ar' ? 'العميل' : lang === 'fr' ? 'Client' : 'Customer',
-            amount: lang === 'ar' ? 'المبلغ' : lang === 'fr' ? 'Montant' : 'Amount',
-            status: lang === 'ar' ? 'الحالة' : lang === 'fr' ? 'Statut' : 'Status',
-            date: lang === 'ar' ? 'التاريخ' : lang === 'fr' ? 'Date' : 'Date',
-            actions: lang === 'ar' ? 'الإجراءات' : lang === 'fr' ? 'Actions' : 'Actions',
-            paymentMethod: lang === 'ar' ? 'طريقة الدفع' : lang === 'fr' ? 'Mode de paiement' : 'Payment Method',
-            reference: lang === 'ar' ? 'المرجع' : lang === 'fr' ? 'Référence' : 'Reference',
-            confirmPayment: lang === 'ar' ? 'تأكيد الدفع وتسليم المحتوى' : lang === 'fr' ? 'Confirmer le paiement et livrer' : 'Confirm Payment & Deliver',
-            close: lang === 'ar' ? 'إغلاق' : lang === 'fr' ? 'Fermer' : 'Close',
-            viewDetails: lang === 'ar' ? 'عرض' : lang === 'fr' ? 'Voir' : 'View',
-            all: lang === 'ar' ? 'الكل' : lang === 'fr' ? 'Tous' : 'All',
-            confirmedAt: lang === 'ar' ? 'تم التأكيد في' : lang === 'fr' ? 'Confirmé le' : 'Confirmed At',
-        },
-        status: {
-            PENDING: lang === 'ar' ? 'معلق' : lang === 'fr' ? 'En attente' : 'Pending',
-            PAID: lang === 'ar' ? 'مدفوع' : lang === 'fr' ? 'Payé' : 'Paid',
-            CANCELLED: lang === 'ar' ? 'ملغي' : lang === 'fr' ? 'Annulé' : 'Cancelled',
-        },
-        paymentMethods: {
-            BANK_TRANSFER: lang === 'ar' ? 'تحويل بنكي' : lang === 'fr' ? 'Virement bancaire' : 'Bank Transfer',
-            CASHPLUS: lang === 'ar' ? 'كاش بلس' : lang === 'fr' ? 'CashPlus' : 'CashPlus',
-        }
-    };
 
     useEffect(() => {
         fetchOrders();
@@ -373,5 +342,45 @@ export default function AdminOrdersPage({ params }: { params: Promise<{ lang: st
                 </div>
             )}
         </div>
+    );
+}
+
+export default function AdminOrdersPage({ params }: { params: Promise<{ lang: string }> }) {
+    const { lang } = use(params);
+
+    // Dictionary
+    const dict = {
+        orders: {
+            title: lang === 'ar' ? 'إدارة الطلبات' : lang === 'fr' ? 'Gestion des commandes' : 'Order Management',
+            noOrders: lang === 'ar' ? 'لا توجد طلبات' : lang === 'fr' ? 'Aucune commande' : 'No orders',
+            orderId: lang === 'ar' ? 'رقم الطلب' : lang === 'fr' ? 'N° de commande' : 'Order ID',
+            customer: lang === 'ar' ? 'العميل' : lang === 'fr' ? 'Client' : 'Customer',
+            amount: lang === 'ar' ? 'المبلغ' : lang === 'fr' ? 'Montant' : 'Amount',
+            status: lang === 'ar' ? 'الحالة' : lang === 'fr' ? 'Statut' : 'Status',
+            date: lang === 'ar' ? 'التاريخ' : lang === 'fr' ? 'Date' : 'Date',
+            actions: lang === 'ar' ? 'الإجراءات' : lang === 'fr' ? 'Actions' : 'Actions',
+            paymentMethod: lang === 'ar' ? 'طريقة الدفع' : lang === 'fr' ? 'Mode de paiement' : 'Payment Method',
+            reference: lang === 'ar' ? 'المرجع' : lang === 'fr' ? 'Référence' : 'Reference',
+            confirmPayment: lang === 'ar' ? 'تأكيد الدفع وتسليم المحتوى' : lang === 'fr' ? 'Confirmer le paiement et livrer' : 'Confirm Payment & Deliver',
+            close: lang === 'ar' ? 'إغلاق' : lang === 'fr' ? 'Fermer' : 'Close',
+            viewDetails: lang === 'ar' ? 'عرض' : lang === 'fr' ? 'Voir' : 'View',
+            all: lang === 'ar' ? 'الكل' : lang === 'fr' ? 'Tous' : 'All',
+            confirmedAt: lang === 'ar' ? 'تم التأكيد في' : lang === 'fr' ? 'Confirmé le' : 'Confirmed At',
+        },
+        status: {
+            PENDING: lang === 'ar' ? 'معلق' : lang === 'fr' ? 'En attente' : 'Pending',
+            PAID: lang === 'ar' ? 'مدفوع' : lang === 'fr' ? 'Payé' : 'Paid',
+            CANCELLED: lang === 'ar' ? 'ملغي' : lang === 'fr' ? 'Annulé' : 'Cancelled',
+        },
+        paymentMethods: {
+            BANK_TRANSFER: lang === 'ar' ? 'تحويل بنكي' : lang === 'fr' ? 'Virement bancaire' : 'Bank Transfer',
+            CASHPLUS: lang === 'ar' ? 'كاش بلس' : lang === 'fr' ? 'CashPlus' : 'CashPlus',
+        }
+    };
+
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <AdminOrdersContent lang={lang} dict={dict} />
+        </Suspense>
     );
 }
