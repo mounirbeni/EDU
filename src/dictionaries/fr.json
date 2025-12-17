@@ -1,0 +1,139 @@
+{
+    "brand": "PLATEFORME EDU",
+    "navigation": {
+        "home": "Accueil",
+        "features": "Fonctionnalités",
+        "pricing": "Tarifs",
+        "about": "À propos",
+        "login": "Connexion",
+        "getStarted": "Commencer",
+        "dashboard": "Tableau de bord",
+        "admin": "Admin",
+        "logout": "Déconnexion"
+    },
+    "hero": {
+        "title": "Développement Professionnel pour les Enseignants Marocains",
+        "description": "Packs de formation complets et ressources pédagogiques pour les enseignants du primaire, secondaire et lycée dans tous les types d'écoles au Maroc.",
+        "cta": "Découvrir les Packs de Formation"
+    },
+    "features": {
+        "title": "Pourquoi les Enseignants Choisissent Notre Plateforme ?",
+        "subtitle": "Ressources de développement professionnel conçues spécifiquement pour les éducateurs marocains",
+        "feature1Title": "Contenu Pédagogique Expert",
+        "feature1Desc": "Matériel de formation développé par des éducateurs expérimentés et aligné sur les normes du curriculum marocain.",
+        "feature2Title": "Tous les Niveaux d'Enseignement",
+        "feature2Desc": "Ressources adaptées aux enseignants du primaire, secondaire et lycée dans les établissements publics, privés et pionniers.",
+        "feature3Title": "Accès Professionnel à Vie",
+        "feature3Desc": "Une fois achetés, vos supports de formation sont à vous pour toujours avec des mises à jour et nouvelles ressources continues.",
+        "feature4Title": "Ressources Pédagogiques Multi-Format",
+        "feature4Desc": "Guides PDF, sessions audio de formation, plans de cours et outils de gestion de classe pour tous les styles d'enseignement."
+    },
+    "pricing": {
+        "title": "Packs de Développement Professionnel",
+        "subtitle": "Choisissez le pack de formation qui correspond à votre carrière d'enseignant",
+        "bundle1Name": "Pack Essentiel",
+        "bundle1Price": "149 MAD",
+        "bundle1OriginalPrice": "299 MAD",
+        "bundle1Desc": "Parfait pour les enseignants débutants",
+        "bundle1Features": [
+            "10 Modules de Formation",
+            "5 Sessions Audio",
+            "Ressources Pédagogiques de Base",
+            "Accès 6 Mois"
+        ],
+        "bundle2Name": "Pack Professionnel",
+        "bundle2Price": "249 MAD",
+        "bundle2OriginalPrice": "699 MAD",
+        "bundle2Desc": "Ressources complètes pour enseignants expérimentés",
+        "bundle2Features": [
+            "30 Modules de Formation",
+            "20 Sessions Audio",
+            "Support Prioritaire",
+            "Accès à Vie",
+            "Plans de Cours Exclusifs"
+        ],
+        "bundle3Name": "Pack Enseignant Expert",
+        "bundle3Price": "599 MAD",
+        "bundle3OriginalPrice": "1299 MAD",
+        "bundle3Desc": "Tout ce dont vous avez besoin pour exceller dans votre carrière d'enseignant",
+        "bundle3Features": [
+            "50+ Modules de Formation",
+            "40+ Sessions Audio",
+            "Support VIP",
+            "Accès à Vie",
+            "Outils Pédagogiques Avancés",
+            "Session de Mentorat 1-à-1"
+        ],
+        "cta": "Acheter Maintenant",
+        "save": "ÉCONOMISEZ"
+    },
+    "about": {
+        "title": "À Propos de Notre Plateforme",
+        "subtitle": "Soutenir les enseignants marocains avec le développement professionnel depuis le premier jour",
+        "mission": "Notre Mission",
+        "missionDesc": "Autonomiser chaque enseignant au Maroc avec des ressources de développement professionnel de haute qualité, quel que soit le type d'école ou le niveau d'enseignement, favorisant l'excellence éducative à l'échelle nationale.",
+        "vision": "Notre Vision",
+        "visionDesc": "Devenir la plateforme de développement professionnel leader pour les éducateurs marocains, reconnue pour notre engagement envers la croissance des enseignants aux niveaux primaire, secondaire et lycée.",
+        "story": "Notre Histoire",
+        "storyDesc": "Fondée par des éducateurs expérimentés qui ont reconnu le besoin de développement professionnel accessible et de haute qualité au Maroc. Nous servons les enseignants des établissements publics, privés et pionniers à tous les niveaux d'enseignement.",
+        "values": "Nos Valeurs",
+        "value1": "Excellence Centrée sur l'Enseignant",
+        "value1Desc": "Chaque ressource est conçue spécifiquement pour les enseignants marocains, révisée par des éducateurs et alignée sur les besoins du curriculum local.",
+        "value2": "Accessibilité pour Tous les Éducateurs",
+        "value2Desc": "Que vous enseigniez au primaire, secondaire ou lycée, dans des établissements publics ou privés, nos ressources vous sont accessibles.",
+        "value3": "Innovation Continue",
+        "value3Desc": "Nous mettons constamment à jour nos supports de formation pour refléter les dernières méthodes pédagogiques et meilleures pratiques éducatives.",
+        "value4": "Soutien Dédié aux Enseignants",
+        "value4Desc": "Votre croissance professionnelle est notre priorité. Nous sommes là pour soutenir votre parcours d'enseignant à chaque étape.",
+        "stats": {
+            "students": "5 000+",
+            "studentsLabel": "Enseignants Actifs",
+            "courses": "100+",
+            "coursesLabel": "Modules de Formation",
+            "satisfaction": "98%",
+            "satisfactionLabel": "Satisfaction des Enseignants",
+            "completion": "85%",
+            "completionLabel": "Taux d'Achèvement"
+        }
+    },
+    "register": {
+        "title": "Créez votre compte enseignant",
+        "subtitle": "Rejoignez notre communauté d'éducateurs professionnels",
+        "fullName": "Nom complet",
+        "fullNamePlaceholder": "Entrez votre nom complet",
+        "email": "Adresse email",
+        "emailPlaceholder": "votre.email@exemple.com",
+        "password": "Mot de passe",
+        "passwordPlaceholder": "Minimum 8 caractères",
+        "educationLevel": "Niveau d'enseignement",
+        "educationLevelPlaceholder": "Sélectionnez votre niveau",
+        "primary": "Enseignement Primaire",
+        "secondary": "Enseignement Collégial",
+        "highSchool": "Enseignement Lycée",
+        "subject": "Matière enseignée",
+        "subjectPlaceholder": "ex: Mathématiques, Arabe, Sciences",
+        "phone": "Numéro de téléphone",
+        "phonePlaceholder": "ex: 06 00 00 00 00",
+        "city": "Ville",
+        "cityPlaceholder": "ex: Casablanca",
+        "institution": "Établissement / École",
+        "institutionPlaceholder": "ex: Lycée Ibn Sina",
+        "submitButton": "Créer un compte",
+        "alreadyHaveAccount": "Vous avez déjà un compte ?",
+        "loginLink": "Connectez-vous ici",
+        "errors": {
+            "required": "Ce champ est obligatoire",
+            "invalidEmail": "Veuillez entrer une adresse email valide",
+            "passwordTooShort": "Le mot de passe doit contenir au moins 8 caractères",
+            "emailExists": "Cet email est déjà enregistré",
+            "serverError": "L'inscription a échoué. Veuillez réessayer."
+        },
+        "success": "Compte créé avec succès ! Redirection vers la connexion..."
+    },
+    "footer": {
+        "about": "À propos",
+        "terms": "Conditions Générales",
+        "privacy": "Politique de Confidentialité",
+        "rights": "Tous droits réservés"
+    }
+}

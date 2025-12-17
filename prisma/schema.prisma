@@ -1,0 +1,142 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String    @id @default(uuid())
+  email          String    @unique
+  password       String    // Hashed
+  name           String?
+  phone          String?
+  role           String    @default("USER") // USER, ADMIN
+  
+  // Teacher-specific fields
+  educationLevel String?   // PRIMARY, SECONDARY, HIGH_SCHOOL
+  subject        String?   // Subject they teach
+  city           String?
+  institution    String?
+  
+  emailVerified  DateTime?
+  image          String?
+  accounts       Account[]
+  sessions       Session[]
+  orders         Order[]
+  tickets        Ticket[]
+  preferredLanguage String?  @default("en") // en, ar, fr
+  isActive       Boolean   @default(true)   // For account suspension
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model Account {
+  id                 String  @id @default(uuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(uuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model Product {
+  id            String   @id @default(uuid())
+  title         String
+  titleAr       String?  // Arabic title
+  titleFr       String?  // French title
+  description   String
+  descriptionAr String?  // Arabic description
+  descriptionFr String?  // French description
+  price         Float
+  filePath      String   // Path to PDF/Asset
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  OrderItems    OrderItem[]
+}
+
+model Order {
+  id               String      @id @default(uuid())
+  userId           String
+  user             User        @relation(fields: [userId], references: [id])
+  status           String      @default("PENDING") // PENDING, PAID, CANCELLED
+  total            Float
+  paymentMethod    String?     // BANK_TRANSFER, CASHPLUS
+  paymentReference String?     // Transaction reference from user
+  confirmedAt      DateTime?   // When admin confirmed payment
+  confirmedBy      String?     // Admin user ID who confirmed
+  deliveredAt      DateTime?   // When content was delivered
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+  items            OrderItem[]
+}
+
+model OrderItem {
+  id        String  @id @default(uuid())
+  orderId   String
+  order     Order   @relation(fields: [orderId], references: [id])
+  productId String
+  product   Product @relation(fields: [productId], references: [id])
+  price     Float // Price at time of purchase
+}
+
+model Ticket {
+  id            String          @id @default(uuid())
+  userId        String
+  user          User            @relation(fields: [userId], references: [id])
+  subject       String
+  status        String          @default("OPEN") // OPEN, IN_PROGRESS, CLOSED, ARCHIVED
+  priority      String          @default("NORMAL") // LOW, NORMAL, HIGH
+  messages      String          @default("[]") // Legacy JSON field
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  TicketMessage TicketMessage[]
+}
+
+model TicketMessage {
+  id        String   @id @default(uuid())
+  ticketId  String
+  ticket    Ticket   @relation(fields: [ticketId], references: [id])
+  sender    String   // USER or ADMIN
+  content   String
+  createdAt DateTime @default(now())
+}
+
+model AdminLog {
+  id        String   @id @default(uuid())
+  adminId   String   // ID of admin who performed action
+  action    String   // CONFIRM_PAYMENT, UPDATE_ORDER, SUSPEND_USER, etc.
+  targetId  String   // ID of affected entity
+  targetType String  // ORDER, USER, TICKET, PRODUCT
+  details   String?  // JSON details of the action
+  createdAt DateTime @default(now())
+}

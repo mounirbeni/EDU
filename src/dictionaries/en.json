@@ -1,0 +1,139 @@
+{
+    "brand": "EDU PLATFORM",
+    "navigation": {
+        "home": "Home",
+        "features": "Features",
+        "pricing": "Pricing",
+        "about": "About",
+        "login": "Login",
+        "getStarted": "Get Started",
+        "dashboard": "Dashboard",
+        "admin": "Admin",
+        "logout": "Logout"
+    },
+    "hero": {
+        "title": "Professional Development for Moroccan Teachers",
+        "description": "Comprehensive training packages and pedagogical resources for primary, secondary, and high school educators across all school types in Morocco.",
+        "cta": "Explore Training Packages"
+    },
+    "features": {
+        "title": "Why Teachers Choose Our Platform?",
+        "subtitle": "Professional development resources designed specifically for Moroccan educators",
+        "feature1Title": "Expert Pedagogical Content",
+        "feature1Desc": "Training materials developed by experienced educators and aligned with Moroccan curriculum standards.",
+        "feature2Title": "All Education Levels",
+        "feature2Desc": "Resources tailored for primary, secondary, and high school teachers in public, private, and pioneering institutions.",
+        "feature3Title": "Lifetime Professional Access",
+        "feature3Desc": "Once purchased, your training materials are yours forever with continuous updates and new resources.",
+        "feature4Title": "Multi-Format Teaching Resources",
+        "feature4Desc": "PDF guides, audio training sessions, lesson plans, and classroom management tools for every teaching style."
+    },
+    "pricing": {
+        "title": "Professional Development Packages",
+        "subtitle": "Choose the training package that fits your teaching career",
+        "bundle1Name": "Essential Package",
+        "bundle1Price": "149 MAD",
+        "bundle1OriginalPrice": "299 MAD",
+        "bundle1Desc": "Perfect for early-career teachers starting their professional journey",
+        "bundle1Features": [
+            "10 Training Modules",
+            "5 Audio Sessions",
+            "Basic Teaching Resources",
+            "6 Months Access"
+        ],
+        "bundle2Name": "Professional Package",
+        "bundle2Price": "249 MAD",
+        "bundle2OriginalPrice": "699 MAD",
+        "bundle2Desc": "Comprehensive resources for experienced educators",
+        "bundle2Features": [
+            "30 Training Modules",
+            "20 Audio Sessions",
+            "Priority Support",
+            "Lifetime Access",
+            "Exclusive Lesson Plans"
+        ],
+        "bundle3Name": "Master Teacher Package",
+        "bundle3Price": "599 MAD",
+        "bundle3OriginalPrice": "1299 MAD",
+        "bundle3Desc": "Everything you need to excel in your teaching career",
+        "bundle3Features": [
+            "50+ Training Modules",
+            "40+ Audio Sessions",
+            "VIP Support",
+            "Lifetime Access",
+            "Advanced Pedagogical Tools",
+            "1-on-1 Mentorship Session"
+        ],
+        "cta": "Purchase Now",
+        "save": "SAVE"
+    },
+    "about": {
+        "title": "About Our Platform",
+        "subtitle": "Supporting Moroccan teachers with professional development since day one",
+        "mission": "Our Mission",
+        "missionDesc": "To empower every teacher in Morocco with high-quality professional development resources, regardless of school type or education level, fostering excellence in education nationwide.",
+        "vision": "Our Vision",
+        "visionDesc": "To become the leading professional development platform for Moroccan educators, recognized for our commitment to teacher growth across primary, secondary, and high school levels.",
+        "story": "Our Story",
+        "storyDesc": "Founded by experienced educators who recognized the need for accessible, high-quality professional development in Morocco. We serve teachers in public, private, and pioneering institutions across all education levels.",
+        "values": "Our Values",
+        "value1": "Teacher-Centered Excellence",
+        "value1Desc": "Every resource is designed specifically for Moroccan teachers, reviewed by educators, and aligned with local curriculum needs.",
+        "value2": "Accessibility for All Educators",
+        "value2Desc": "Whether you teach in primary, secondary, or high school, in public or private institutions, our resources are accessible to you.",
+        "value3": "Continuous Innovation",
+        "value3Desc": "We constantly update our training materials to reflect the latest pedagogical methods and educational best practices.",
+        "value4": "Dedicated Teacher Support",
+        "value4Desc": "Your professional growth is our priority. We're here to support your teaching journey every step of the way.",
+        "stats": {
+            "students": "5,000+",
+            "studentsLabel": "Active Teachers",
+            "courses": "100+",
+            "coursesLabel": "Training Modules",
+            "satisfaction": "98%",
+            "satisfactionLabel": "Teacher Satisfaction",
+            "completion": "85%",
+            "completionLabel": "Completion Rate"
+        }
+    },
+    "register": {
+        "title": "Create Your Teacher Account",
+        "subtitle": "Join our community of professional educators",
+        "fullName": "Full Name",
+        "fullNamePlaceholder": "Enter your full name",
+        "email": "Email Address",
+        "emailPlaceholder": "your.email@example.com",
+        "password": "Password",
+        "passwordPlaceholder": "Minimum 8 characters",
+        "educationLevel": "Education Level",
+        "educationLevelPlaceholder": "Select your teaching level",
+        "primary": "Primary School",
+        "secondary": "Secondary School",
+        "highSchool": "High School",
+        "subject": "Subject You Teach",
+        "subjectPlaceholder": "e.g., Mathematics, Arabic, Science",
+        "phone": "Phone Number",
+        "phonePlaceholder": "e.g., 06 00 00 00 00",
+        "city": "City",
+        "cityPlaceholder": "e.g., Casablanca",
+        "institution": "Institution / School",
+        "institutionPlaceholder": "e.g., Lycée Ibn Sina",
+        "submitButton": "Create Account",
+        "alreadyHaveAccount": "Already have an account?",
+        "loginLink": "Login here",
+        "errors": {
+            "required": "This field is required",
+            "invalidEmail": "Please enter a valid email address",
+            "passwordTooShort": "Password must be at least 8 characters",
+            "emailExists": "This email is already registered",
+            "serverError": "Registration failed. Please try again."
+        },
+        "success": "Account created successfully! Redirecting to login..."
+    },
+    "footer": {
+        "about": "About",
+        "terms": "Terms & Conditions",
+        "privacy": "Privacy Policy",
+        "rights": "All rights reserved"
+    }
+}
