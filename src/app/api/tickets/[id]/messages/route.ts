@@ -4,6 +4,7 @@ import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 
 // POST: Add a message to a ticket
+export const dynamic = 'force-dynamic';
 export async function POST(
     req: Request,
     { params }: { params: Promise<{ id: string }> }

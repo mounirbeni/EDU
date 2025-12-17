@@ -4,6 +4,7 @@ import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 
 // PUT: Update teacher status (activate/suspend)
+export const dynamic = 'force-dynamic';
 export async function PUT(
     req: Request,
     { params }: { params: Promise<{ id: string }> }

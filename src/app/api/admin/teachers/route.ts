@@ -4,6 +4,7 @@ import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 
 // GET: Fetch all teachers (users with role USER)
+export const dynamic = 'force-dynamic';
 export async function GET(req: Request) {
     try {
         const session = await getServerSession(authOptions);
